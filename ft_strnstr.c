@@ -6,14 +6,14 @@
 /*   By: csapt <csapt@student.le-101.fr>            +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/08 21:10:30 by csapt        #+#   ##    ##    #+#       */
-/*   Updated: 2019/11/02 15:39:58 by csapt       ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/11/04 14:20:50 by csapt       ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *s1, char *s2, size_t len)
+char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 {
 	size_t x;
 	size_t i;

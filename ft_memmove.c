@@ -6,7 +6,7 @@
 /*   By: csapt <csapt@student.le-101.fr>            +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/10 12:27:17 by csapt        #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/16 22:33:26 by csapt       ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/11/05 11:21:20 by csapt       ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -22,11 +22,9 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	srcptr = (unsigned char *)src;
 	if (srcptr < dstptr)
 	{
-		while (len > 0)
-		{
+		len++;
+		while (--len)
 			dstptr[len - 1] = srcptr[len - 1];
-			len--;
-		}
 	}
 	else
 		dst = ft_memcpy(dst, src, len);

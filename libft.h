@@ -6,7 +6,7 @@
 /*   By: csapt <csapt@student.le-101.fr>            +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/10 18:59:20 by csapt        #+#   ##    ##    #+#       */
-/*   Updated: 2019/11/02 18:51:35 by csapt       ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/11/04 14:20:30 by csapt       ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -41,7 +41,7 @@ char			*ft_strchr(const char *str, int c);
 char			*ft_strdup(const char *s1);
 size_t			ft_strlen(const char *str);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
-char			*ft_strnstr(const char *s1, char *s2, size_t len);
+char			*ft_strnstr(const char *s1, const char *s2, size_t len);
 char			*ft_strrchr(const char *s, int c);
 int				ft_toupper(int c);
 int				ft_tolower(int c);
