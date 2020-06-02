@@ -6,7 +6,7 @@
 /*   By: csapt <csapt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/22 20:18:44 by csapt             #+#    #+#             */
-/*   Updated: 2020/05/22 20:18:45 by csapt            ###   ########lyon.fr   */
+/*   Updated: 2020/06/02 10:25:42 by csapt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct	s_list
 }				t_list;
 
 int				ft_atoi(const char *str);
+int				ft_atoi_index(char *str, int *x);
 void			ft_bzero(void *s, size_t n);
 void			*ft_calloc(size_t count, size_t size);
 int				ft_isalnum(int c);

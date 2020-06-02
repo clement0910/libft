@@ -3,6 +3,7 @@ NAME 	= 	libft.a
 HEADER	=	libft.h
 
 SRCS	=	ft_atoi.c				\
+			ft_atoi_index.c			\
 			ft_bzero.c				\
 			ft_isalnum.c			\
 			ft_isalpha.c			\
