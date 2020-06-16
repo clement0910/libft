@@ -6,9 +6,11 @@
 /*   By: csapt <csapt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 16:06:24 by csapt             #+#    #+#             */
-/*   Updated: 2020/06/16 16:07:42 by csapt            ###   ########lyon.fr   */
+/*   Updated: 2020/06/16 16:11:18 by csapt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_strlentab(char **tab)
 {
