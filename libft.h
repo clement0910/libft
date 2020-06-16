@@ -6,7 +6,7 @@
 /*   By: csapt <csapt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/22 20:18:44 by csapt             #+#    #+#             */
-/*   Updated: 2020/06/02 10:25:42 by csapt            ###   ########lyon.fr   */
+/*   Updated: 2020/06/16 16:08:50 by csapt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void			*ft_memset(void *b, int c, size_t len);
 char			*ft_strchr(const char *str, int c);
 char			*ft_strdup(const char *s1);
 size_t			ft_strlen(const char *str);
+int				ft_strlentab(char **tab);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 char			*ft_strnstr(const char *s1, const char *s2, size_t len);
 char			*ft_strrchr(const char *s, int c);
