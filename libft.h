@@ -6,7 +6,11 @@
 /*   By: csapt <csapt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/22 20:18:44 by csapt             #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2020/09/09 14:25:18 by csapt            ###   ########lyon.fr   */
+=======
+/*   Updated: 2020/07/29 14:48:21 by csapt            ###   ########lyon.fr   */
+>>>>>>> e4b5aac0f7419340783f9e4c22426edfa9faab36
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +50,7 @@ void			*ft_memset(void *b, int c, size_t len);
 char			*ft_strchr(const char *str, int c);
 char			*ft_strdup(const char *s1);
 size_t			ft_strlen(const char *str);
-int				ft_strlentab(char **tab);
+int				ft_tablen(char **tab);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 char			*ft_strnstr(const char *s1, const char *s2, size_t len);
 char			*ft_strrchr(const char *s, int c);
@@ -77,5 +81,6 @@ void			ft_lstclear(t_list **lst, void (*del)(void *));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 				void (*del)(void *));
+int				ft_lstmaxlen(t_list **maplist);
 
 #endif
