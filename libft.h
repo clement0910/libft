@@ -6,7 +6,7 @@
 /*   By: csapt <csapt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/22 20:18:44 by csapt             #+#    #+#             */
-/*   Updated: 2020/09/09 14:29:55 by csapt            ###   ########lyon.fr   */
+/*   Updated: 2020/09/09 14:42:06 by csapt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ typedef struct	s_list
 
 typedef struct	s_vec2f
 {
-	double posx;
-	double posy;
+	double x;
+	double y;
 }				t_vec2f;
 
 int				ft_atoi(const char *str);
