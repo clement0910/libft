@@ -6,7 +6,7 @@
 /*   By: csapt <csapt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/22 20:18:44 by csapt             #+#    #+#             */
-/*   Updated: 2020/12/29 12:37:37 by csapt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/29 12:53:31 by csapt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <fcntl.h>
+# include <stdio.h>
+# include <sys/types.h>
+# include <sys/uio.h>
+# include <unistd.h>
+# include <stdlib.h>
 
 typedef struct	s_list
 {
