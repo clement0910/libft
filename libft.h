@@ -6,7 +6,7 @@
 /*   By: csapt <csapt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/22 20:18:44 by csapt             #+#    #+#             */
-/*   Updated: 2020/12/29 12:53:31 by csapt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/29 12:59:13 by csapt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,4 +106,5 @@ size_t			ft_strlen_gnl(char *str);
 char			*ft_strcpy(char *src, char *dst);
 char			*ft_strjoin_cpy(char *s1);
 char			*ft_strjoin_gnl(char *s1, char *s2);
+char			*ft_strdup_gnl(const char *s1);
 #endif

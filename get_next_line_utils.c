@@ -6,7 +6,7 @@
 /*   By: csapt <csapt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/22 20:28:30 by csapt             #+#    #+#             */
-/*   Updated: 2020/12/29 12:39:03 by csapt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/29 12:58:57 by csapt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ size_t	ft_strlen_gnl(char *str)
 	return (x);
 }
 
-char	*ft_strdup(const char *s1)
+char	*ft_strdup_gnl(const char *s1)
 {
 	long	x;
 	long	i;
