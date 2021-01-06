@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lst_delone.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: csapt <csapt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/22 20:14:36 by csapt             #+#    #+#             */
-/*   Updated: 2020/05/22 20:14:37 by csapt            ###   ########lyon.fr   */
+/*   Created: 2020/05/22 20:13:53 by csapt             #+#    #+#             */
+/*   Updated: 2021/01/05 20:47:09 by csapt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_lst_delone(t_list *lst, void (*del)(void *))
 {
-	t_list		*ptr;
-
-	if (!(ptr = malloc(sizeof(t_list))))
-		return (0);
-	ptr->content = content;
-	ptr->next = NULL;
-	return (ptr);
+	if (!lst || !lst->content)
+		return ;
+	del(lst->content);
+	free(lst);
+	lst = NULL;
 }

@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
+/*   libft_conversion.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: csapt <csapt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/22 20:13:39 by csapt             #+#    #+#             */
-/*   Updated: 2020/05/22 20:13:40 by csapt            ###   ########lyon.fr   */
+/*   Created: 2021/01/05 22:39:21 by csapt             #+#    #+#             */
+/*   Updated: 2021/01/06 17:38:36 by csapt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef LIBFT_CONVERSION_H
+# define LIBFT_CONVERSION_H
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
-{
-	t_list *temp;
+int				ft_atoi(const char *str);
+int				ft_atoi_index(char *str, int *x);
+char			*ft_itoa(int n);
 
-	if (!*lst || !del)
-		return ;
-	temp = *lst;
-	while (temp)
-	{
-		(*del)(temp->content);
-		*lst = temp->next;
-		free(temp);
-		temp = *lst;
-	}
-	lst = NULL;
-}
+#endif

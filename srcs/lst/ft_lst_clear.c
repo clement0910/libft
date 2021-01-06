@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lst_clear.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: csapt <csapt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/22 20:14:11 by csapt             #+#    #+#             */
-/*   Updated: 2020/05/22 20:14:13 by csapt            ###   ########lyon.fr   */
+/*   Created: 2020/05/22 20:13:39 by csapt             #+#    #+#             */
+/*   Updated: 2021/01/05 20:46:57 by csapt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lst_clear(t_list **lst, void (*del)(void *))
 {
-	if (!lst)
-		return (NULL);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
+	t_list *temp;
+
+	if (!*lst || !del)
+		return ;
+	temp = *lst;
+	while (temp)
+	{
+		(*del)(temp->content);
+		*lst = temp->next;
+		free(temp);
+		temp = *lst;
+	}
+	lst = NULL;
 }

@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmaxlen.c                                     :+:      :+:    :+:   */
+/*   ft_lst_iter.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: csapt <csapt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/29 14:46:15 by csapt             #+#    #+#             */
-/*   Updated: 2020/10/20 01:41:17 by csapt            ###   ########lyon.fr   */
+/*   Created: 2020/05/22 20:14:02 by csapt             #+#    #+#             */
+/*   Updated: 2021/01/05 20:47:18 by csapt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstmaxlen(t_list **maplist)
+void	ft_lst_iter(t_list *lst, void (*f)(void *))
 {
-	size_t	x;
-	t_list	*temp;
-
-	x = 0;
-	temp = *maplist;
-	while (temp)
+	if (!lst || !f)
+		return ;
+	while (lst)
 	{
-		if (x < ft_strlen((char*)temp->content))
-			x = ft_strlen((char*)temp->content);
-		temp = temp->next;
+		(*f)(lst->content);
+		lst = lst->next;
 	}
-	return (x);
 }
