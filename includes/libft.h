@@ -6,7 +6,7 @@
 /*   By: csapt <csapt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/22 20:18:44 by csapt             #+#    #+#             */
-/*   Updated: 2021/01/06 17:38:36 by csapt            ###   ########.fr       */
+/*   Updated: 2021/01/07 16:32:15 by csapt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include "libft_str.h"
 # include "libft_time.h"
 # include "libft_vector.h"
+# include "ft_printf/libftprintf.h"
 
 # include <unistd.h>
 # include <fcntl.h>
