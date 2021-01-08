@@ -92,6 +92,8 @@ SRC_PRINT :=	ft_putchar_fd.c							\
 				ft_putnbr_fd.c							\
 				ft_putstr_fd.c							\
 				ft_putunbr_fd.c							\
+				print_lst.c								\
+				print_tab.c
 				
 SRCPATH_PRINT := $(addprefix $(SRCDIR_PRINT), $(SRC_PRINT))
 
@@ -205,7 +207,7 @@ ERASE_FULLLINE := \e[2K
 all: premake
 
 premake: $(OBJSDIRS)
-		$(MAKE) -s $(NAME) --no-print-directory COUNT=1
+		@$(MAKE) -s $(NAME) --no-print-directory COUNT=1
 
 $(NAME)	: $(OBJS)
 		@$(PRINT) "$(ERASE_FULLLINE)\033[1;34m%-20s\033[1;33m%-25s\033[0;32m[OK]\033[0m\n$(SHOW_CURSOR)" "Compiled lib" "$(NAME)"
@@ -217,11 +219,11 @@ printdebug:
 
 $(PRINTF_OBJSDIR)%.o: $(PRINTF_SRCS_DIR)%.c $(INCLUDES)
 		$(CC) $(CFLAGS) -c -I $(LFT_INCLUDES_DIR) -I $(PRINTF_INCLUDES_DIR) -o $@ $<
-#		@$(PRINT) "$(HIDE_CURSOR)\033[1;34m%-20s\033[1;33m%-25s\033[0;32m$(PROGRESS)\033[0m$(ERASE_ENDLINE)$(CURSOR_LEFT)" "Compilation..." "$(NAME)"
+		@$(PRINT) "$(HIDE_CURSOR)\033[1;34m%-20s\033[1;33m%-25s\033[0;32m$(PROGRESS)\033[0m$(ERASE_ENDLINE)$(CURSOR_LEFT)" "Compilation..." "$(NAME)"
 
 $(LFT_OBJSDIR)%.o: $(LFT_SRCS_DIR)%.c $(LFT_INCLUDES)
 		$(CC) $(CFLAGS) -c -I $(LFT_INCLUDES_DIR) -o $@ $<
-#		@$(PRINT) "$(HIDE_CURSOR)\033[1;34m%-20s\033[1;33m%-25s\033[0;32m$(PROGRESS)\033[0m$(ERASE_ENDLINE)$(CURSOR_LEFT)" "Compilation..." "$(NAME)"
+		@$(PRINT) "$(HIDE_CURSOR)\033[1;34m%-20s\033[1;33m%-25s\033[0;32m$(PROGRESS)\033[0m$(ERASE_ENDLINE)$(CURSOR_LEFT)" "Compilation..." "$(NAME)"
 
 $(OBJSDIRS):
 		@mkdir -p $@
