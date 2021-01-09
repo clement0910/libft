@@ -6,14 +6,14 @@
 /*   By: csapt <csapt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 22:49:14 by csapt             #+#    #+#             */
-/*   Updated: 2021/01/06 17:38:36 by csapt            ###   ########.fr       */
+/*   Updated: 2021/01/09 11:16:31 by csapt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_PRINT_H
-#define LIBFT_PRINT_H
+# define LIBFT_PRINT_H
 
-#include "libft_lst.h"
+# include "libft_lst.h"
 
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);

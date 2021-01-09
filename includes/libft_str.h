@@ -6,14 +6,14 @@
 /*   By: csapt <csapt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 22:54:01 by csapt             #+#    #+#             */
-/*   Updated: 2021/01/06 17:38:36 by csapt            ###   ########.fr       */
+/*   Updated: 2021/01/09 11:16:10 by csapt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_STR_H
-#define LIBFT_STR_H
+# define LIBFT_STR_H
 
-#include "libft_mem.h"
+# include "libft_mem.h"
 
 int				ft_isalnum(int c);
 int				ft_isalpha(int c);

@@ -6,7 +6,7 @@
 /*   By: csapt <csapt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 23:01:03 by csapt             #+#    #+#             */
-/*   Updated: 2021/01/06 17:38:36 by csapt            ###   ########.fr       */
+/*   Updated: 2021/01/09 11:16:20 by csapt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <sys/time.h>
 # include <stdbool.h>
+
 typedef struct		s_timer
 {
 	unsigned long	ref_time;
