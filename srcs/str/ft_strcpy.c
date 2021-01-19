@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: csapt <csapt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/22 20:18:44 by csapt             #+#    #+#             */
-/*   Updated: 2021/01/19 16:08:26 by csapt            ###   ########lyon.fr   */
+/*   Created: 2021/01/19 14:15:10 by csapt             #+#    #+#             */
+/*   Updated: 2021/01/19 14:25:36 by csapt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include "libft_conversion.h"
-# include "libft_lst.h"
-# include "libft_gnl.h"
-# include "libft_mem.h"
-# include "libft_print.h"
-# include "libft_str.h"
-# include "libft_time.h"
-# include "libft_vector.h"
-# include "ft_printf/libftprintf.h"
+char	*ft_strcpy(char *src, char *dst)
+{
+	int x;
 
-#endif
+	x = 0;
+	if (!dst || !src)
+		return (NULL);
+	while (src[x] && dst[x])
+	{
+		dst[x] = src[x];
+		x++;
+	}
+	while (dst[x])
+	{
+		dst[x] = '\0';
+		x++;
+	}
+	return (dst);
+}

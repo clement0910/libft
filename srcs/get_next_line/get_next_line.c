@@ -6,79 +6,118 @@
 /*   By: csapt <csapt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/22 20:28:37 by csapt             #+#    #+#             */
-/*   Updated: 2020/12/29 13:00:08 by csapt            ###   ########lyon.fr   */
+/*   Updated: 2021/01/19 16:11:46 by csapt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_check_index(char *buf)
+static	char	*ft_strdup_gnl(char *src)
 {
-	long	x;
+	int		x;
+	char	*ret;
 
 	x = 0;
-	while (buf[x] != '\0')
+	if (!(ret = malloc((ft_strlento(src, '\n') + 1) * sizeof(char))))
+		return (NULL);
+	while (src[x] != '\n' && src[x] != '\0')
 	{
-		if (buf[x] == '\n')
-		{
-			x++;
-			return (x);
-		}
+		ret[x] = src[x];
 		x++;
 	}
-	return (-1);
+	ret[x] = '\0';
+	return (ret);
 }
 
-int		get_next_zero(char **str, char *buf)
+static	char	*ft_strjoin_gnl(char *s1, char *s2)
 {
-	long x;
+	int		x;
+	int		y;
+	char	*str;
 
-	x = ft_check_index(buf);
-	if (x > 0)
-		ft_strcpy(buf + x, buf);
-	*str = ft_strjoin_gnl(*str, buf);
-	if (ft_chrcmp(buf, '\n') == 0)
-		return (1);
-	return (0);
+	x = 0;
+	y = 0;
+	if (s1 == NULL)
+		return (ft_strdup_gnl(s2));
+	if (!(str = malloc((ft_strlento(s1, '\0') + ft_strlento(s2, '\n') + 1)
+		* sizeof(char))))
+		return (NULL);
+	while (s1[x])
+	{
+		str[x] = s1[x];
+		x++;
+	}
+	while (s2[y] && s2[y] != '\n')
+	{
+		str[x] = s2[y];
+		x++;
+		y++;
+	}
+	str[x] = '\0';
+	free(s1);
+	return (str);
 }
 
-int		get_next_backn(char **str, char *buf, int fd, long *error)
+static void		sub_modif(char *str)
 {
-	if (BUFFER_SIZE <= 0)
-		return (-1);
-	*error = read(fd, buf, BUFFER_SIZE);
-	if (fd < 0 || *error < 0)
-		return (-1);
-	buf[*error] = '\0';
-	*str = ft_strjoin_gnl(*str, buf);
-	return (1);
+	int x;
+	int y;
+
+	x = 0;
+	y = 0;
+	while (str[x] != '\n' && str[x] != '\0')
+		x++;
+	x++;
+	while (str[x] != '\0')
+	{
+		str[y] = str[x];
+		x++;
+		y++;
+	}
+	while (y < x)
+	{
+		str[y] = '\0';
+		y++;
+	}
 }
 
-int		get_next_line(int fd, char **line)
+static	char	*malloc_buffer(int size)
 {
-	static char		buf[(BUFFER_SIZE * 1) + 1];
-	char			*str;
-	long			error;
+	char *ret;
 
-	str = NULL;
-	if ((error = 1) == 1 && (fd < 0 || !line || BUFFER_SIZE <= 0))
+	if (size == 0)
+		return (NULL);
+	if (!(ret = malloc((size + 1) * sizeof(char))))
+		return (NULL);
+	ret[0] = '\0';
+	return (ret);
+}
+
+int				get_next_line(int fd, char **line)
+{
+	static char *buf = NULL;
+	long		error;
+
+	*line = NULL;
+	if ((buf == NULL && !(buf = malloc_buffer(BUFFER_SIZE))) ||
+			((error = 1) == 1 && (fd < 0 || !line || BUFFER_SIZE <= 0)))
 		return (-1);
 	if (ft_chrcmp(buf, '\n') == 0)
 	{
-		if (get_next_zero(&str, buf) == 1)
-		{
-			*line = ft_strdup(str);
-			free(str);
+		sub_modif(buf);
+		*line = ft_strjoin_gnl(*line, buf);
+		if (ft_chrcmp(buf, '\n') == 0)
 			return (1);
-		}
 	}
 	while (ft_chrcmp(buf, '\n') == 1 && error != 0)
 	{
-		get_next_backn(&str, buf, fd, &error);
-		if (error < 0)
+		error = read(fd, buf, BUFFER_SIZE);
+		if (fd < 0 || error < 0)
 			return (-1);
+		buf[error] = '\0';
+		*line = ft_strjoin_gnl(*line, buf);
 	}
-	*line = ft_strdup(str);
-	free(str);
+	(error == 0) ? free(buf) : 0;
+	(error == 0) ? buf = NULL : 0;
 	return ((error == 0) ? 0 : 1);
 }

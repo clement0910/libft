@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strlento.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: csapt <csapt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/22 20:18:44 by csapt             #+#    #+#             */
-/*   Updated: 2021/01/19 16:08:26 by csapt            ###   ########lyon.fr   */
+/*   Created: 2021/01/19 14:49:39 by csapt             #+#    #+#             */
+/*   Updated: 2021/01/19 14:51:11 by csapt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include "libft_conversion.h"
-# include "libft_lst.h"
-# include "libft_gnl.h"
-# include "libft_mem.h"
-# include "libft_print.h"
-# include "libft_str.h"
-# include "libft_time.h"
-# include "libft_vector.h"
-# include "ft_printf/libftprintf.h"
+size_t	ft_strlento(char *str, char c)
+{
+	size_t x;
 
-#endif
+	x = 0;
+	while (str[x])
+	{
+		if (str[x] == c)
+			return (x);
+		x++;
+	}
+	return (x);
+}

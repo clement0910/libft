@@ -6,7 +6,7 @@
 /*   By: csapt <csapt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/22 20:16:51 by csapt             #+#    #+#             */
-/*   Updated: 2020/05/22 20:16:53 by csapt            ###   ########lyon.fr   */
+/*   Updated: 2021/01/19 14:18:22 by csapt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		return (ft_strlen(src));
 	dest_size = ft_strlen(dst);
 	src_size = ft_strlen(src);
-	if (size == 0)
-		return (src_size);
 	if (dest_size >= size)
 		return (src_size + size);
 	while (src[count] && (size - 1 > count + dest_size))

@@ -18,6 +18,7 @@ LFT_SRCS_DIR = srcs/
 LFT_INCLUDES := libft.h									\
 				libft_conversion.h						\
 				libft_lst.h								\
+				libft_gnl.h								\
 				libft_mem.h								\
 				libft_print.h							\
 				libft_str.h								\
@@ -57,8 +58,7 @@ SRC_CONVERSION :=	ft_atoi.c							\
 
 SRCPATH_CONVERSION := $(addprefix $(SRCDIR_CONVERSION), $(SRC_CONVERSION))
 
-SRC_GET_NEXT_LINE :=	get_next_line.c					\
-						get_next_line_utils.c			
+SRC_GET_NEXT_LINE :=	get_next_line.c
 
 SRCPATH_GET_NEXT_LINE := $(addprefix $(SRCDIR_GET_NEXT_LINE), $(SRC_GET_NEXT_LINE))
 
@@ -108,8 +108,10 @@ SRC_STR :=	ft_chrcmp.c									\
 			ft_strdup.c									\
 			ft_strjoin.c								\
 			ft_strlcat.c								\
+			ft_strcpy.c									\
 			ft_strlcpy.c								\
 			ft_strlen.c									\
+			ft_strlento.c								\
 			ft_strmapi.c								\
 			ft_strcmp.c									\
 			ft_strncmp.c								\
