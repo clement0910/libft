@@ -107,6 +107,7 @@ SRC_STR :=	ft_chrcmp.c									\
 			ft_strchr.c									\
 			ft_strdup.c									\
 			ft_strjoin.c								\
+			ft_strfreejoin.c							\
 			ft_strlcat.c								\
 			ft_strcpy.c									\
 			ft_strlcpy.c								\

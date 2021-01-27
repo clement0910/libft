@@ -6,7 +6,7 @@
 /*   By: csapt <csapt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 22:54:01 by csapt             #+#    #+#             */
-/*   Updated: 2021/01/19 15:25:16 by csapt            ###   ########lyon.fr   */
+/*   Updated: 2021/01/27 09:32:57 by csapt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int				ft_toupper(int c);
 int				ft_tolower(int c);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
+char			*ft_strfreejoin(char *s1, char *s2);
 int				ft_chrcmp(char *str, char c);
 char			*ft_strtrim(char const *s1, char const *set);
 char			*ft_strrev(char *str);
