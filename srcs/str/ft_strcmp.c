@@ -6,7 +6,7 @@
 /*   By: csapt <csapt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/19 13:51:10 by csapt             #+#    #+#             */
-/*   Updated: 2021/01/19 14:10:24 by csapt            ###   ########lyon.fr   */
+/*   Updated: 2021/02/08 11:41:35 by csapt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,7 @@ int	ft_strcmp(char *s1, char *s2)
 	int x;
 
 	x = 0;
-	while (s1[x] && s2[x])
-	{
-		if (s1[x] != s2[x])
-			return (1);
+	while (s1[x] == s2[x] && s1[x] != '\0' && s2[x] != '\0')
 		x++;
-	}
-	return (0);
+	return (s1[x] - s2[x]);
 }
