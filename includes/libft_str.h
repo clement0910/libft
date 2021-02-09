@@ -6,7 +6,7 @@
 /*   By: csapt <csapt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 22:54:01 by csapt             #+#    #+#             */
-/*   Updated: 2021/01/27 09:32:57 by csapt            ###   ########lyon.fr   */
+/*   Updated: 2021/02/09 19:42:56 by csapt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,11 @@ int				ft_isalpha(int c);
 int				ft_isascii(int c);
 int				ft_isdigit(int c);
 int				ft_isprint(int c);
+int				ft_isws(int c);
 char			*ft_strchr(const char *str, int c);
 char			*ft_strdup(const char *s1);
+char			*ft_strdupto(char *src, char c);
+char			**ft_strtabdup(char **src);
 size_t			ft_strlen(const char *str);
 size_t			ft_strlento(char *str, char c);
 int				ft_tablen(char **tab);

@@ -103,9 +103,11 @@ SRC_STR :=	ft_chrcmp.c									\
 			ft_isascii.c								\
 			ft_isdigit.c								\
 			ft_isprint.c								\
+			ft_isws.c									\
 			ft_split.c									\
 			ft_strchr.c									\
 			ft_strdup.c									\
+			ft_strdupto.c								\
 			ft_strjoin.c								\
 			ft_strfreejoin.c							\
 			ft_strlcat.c								\
@@ -119,6 +121,7 @@ SRC_STR :=	ft_chrcmp.c									\
 			ft_strnstr.c								\
 			ft_strrchr.c								\
 			ft_strrev.c									\
+			ft_strtabdup.c								\
 			ft_strtrim.c								\
 			ft_substr.c									\
 			ft_tablen.c									\
