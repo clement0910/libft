@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-unsigned long		get_time(void)
+unsigned long	get_time(void)
 {
 	struct timeval	actual_time;
 
@@ -20,24 +20,24 @@ unsigned long		get_time(void)
 	return (actual_time.tv_sec * 1000000 + actual_time.tv_usec);
 }
 
-void				timer_restart(t_timer *timer)
+void	timer_restart(t_timer *timer)
 {
 	timer->ref_time = get_time();
 	timer->elapsed_time = 0;
 	timer->pause = false;
 }
 
-unsigned long		timer_get_microseconds(t_timer *timer)
+unsigned long	timer_get_microseconds(t_timer *timer)
 {
 	return (get_time() - timer->ref_time);
 }
 
-unsigned long		timer_get_milliseconds(t_timer *timer)
+unsigned long	timer_get_milliseconds(t_timer *timer)
 {
 	return (timer_get_microseconds(timer) / 1000);
 }
 
-double				timer_get_seconds(t_timer *timer)
+double	timer_get_seconds(t_timer *timer)
 {
 	return ((double)timer_get_microseconds(timer) / 1000000);
 }

@@ -12,13 +12,14 @@
 
 #include "libft.h"
 
-char		*ft_strdupto(char *src, char c)
+char	*ft_strdupto(char *src, char c)
 {
 	int		x;
 	char	*dest;
 
 	x = 0;
-	if (!(dest = malloc(ft_strlento(src, c) + 1)))
+	dest = malloc(ft_strlento(src, c) + 1);
+	if (dest == NULL)
 		return (NULL);
 	while (src[x] && src[x] != c)
 	{

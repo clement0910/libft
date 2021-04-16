@@ -6,7 +6,7 @@
 /*   By: csapt <csapt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 07:14:24 by csapt             #+#    #+#             */
-/*   Updated: 2021/01/27 09:31:24 by csapt            ###   ########lyon.fr   */
+/*   Updated: 2021/04/16 09:18:00 by csapt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ char	*ft_strfreejoin(char *s1, char *s2)
 	x = 0;
 	if (s1 == NULL)
 		return (ft_strdup(s2));
-	if (!(str = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char))))
+	str = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
+	if (str == NULL)
 		return (NULL);
 	while (s1[x])
 	{

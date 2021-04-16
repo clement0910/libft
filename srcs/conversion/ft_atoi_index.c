@@ -12,8 +12,8 @@
 
 int	ft_atoi_index(char *str, int *x)
 {
-	int resultat;
-	int neg;
+	int		resultat;
+	int		neg;
 
 	resultat = 0;
 	neg = 1;

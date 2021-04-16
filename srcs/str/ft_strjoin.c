@@ -6,7 +6,7 @@
 /*   By: csapt <csapt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/22 20:16:45 by csapt             #+#    #+#             */
-/*   Updated: 2020/05/22 20:16:46 by csapt            ###   ########lyon.fr   */
+/*   Updated: 2021/04/16 09:19:34 by csapt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	x = 0;
 	if (!s1 || !s2)
 		return (0);
-	if (!(str = (char *)malloc(ft_strlen((char *)s1) +
-	ft_strlen((char *)s2) + 1)))
+	str = (char *)malloc(ft_strlen((char *)s1) + ft_strlen((char *)s2) + 1);
+	if (str == NULL)
 		return (0);
 	while (s1[x] != '\0')
 		str[x++] = s1[i++];

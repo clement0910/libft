@@ -14,7 +14,7 @@
 
 size_t	ft_strlento(char *str, char c)
 {
-	size_t x;
+	size_t	x;
 
 	x = 0;
 	while (str[x])

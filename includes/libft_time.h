@@ -16,19 +16,19 @@
 # include <sys/time.h>
 # include <stdbool.h>
 
-typedef struct		s_timer
+typedef struct s_timer
 {
 	unsigned long	ref_time;
 	unsigned long	elapsed_time;
 	bool			pause;
-}					t_timer;
+}				t_timer;
 
-typedef	struct		s_frame
+typedef struct s_frame
 {
 	int				fps;
 	int				lastfps;
 	t_timer			timer;
-}					t_frame;
+}				t_frame;
 
 unsigned long		get_time(void);
 void				timer_restart(t_timer *timer);

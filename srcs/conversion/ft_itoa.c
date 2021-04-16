@@ -6,16 +6,16 @@
 /*   By: csapt <csapt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/22 20:13:22 by csapt             #+#    #+#             */
-/*   Updated: 2020/05/22 20:13:24 by csapt            ###   ########lyon.fr   */
+/*   Updated: 2021/04/16 08:47:30 by csapt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_itoa_malloc(int n)
+static int	ft_itoa_malloc(int n)
 {
-	long x;
-	long y;
+	long	x;
+	long	y;
 
 	y = n;
 	x = 0;
@@ -34,7 +34,7 @@ static int		ft_itoa_malloc(int n)
 	return (x);
 }
 
-static char		*ft_itoa_convert(char *str, int n)
+static char	*ft_itoa_convert(char *str, int n)
 {
 	int		x;
 	int		neg;
@@ -62,11 +62,12 @@ static char		*ft_itoa_convert(char *str, int n)
 	return (str);
 }
 
-char			*ft_itoa(int n)
+char 	*ft_itoa(int n)
 {
 	char			*str;
 
-	if (!(str = (char *)malloc((ft_itoa_malloc(n) + 1) * sizeof(char))))
+	str = (char *)malloc((ft_itoa_malloc(n) + 1) * sizeof(char));
+	if (str == NULL)
 		return (0);
 	ft_itoa_convert(str, n);
 	return (str);

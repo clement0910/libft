@@ -14,8 +14,8 @@
 
 char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 {
-	size_t x;
-	size_t i;
+	size_t	x;
+	size_t	i;
 
 	x = 0;
 	if (s2[0] == '\0')

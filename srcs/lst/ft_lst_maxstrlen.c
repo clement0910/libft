@@ -6,7 +6,7 @@
 /*   By: csapt <csapt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/29 14:46:15 by csapt             #+#    #+#             */
-/*   Updated: 2021/01/05 20:47:41 by csapt            ###   ########lyon.fr   */
+/*   Updated: 2021/04/16 09:06:29 by csapt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int	ft_lst_maxstrlen(t_list **maplist)
 	temp = *maplist;
 	while (temp)
 	{
-		if (x < ft_strlen((char*)temp->content))
-			x = ft_strlen((char*)temp->content);
+		if (x < ft_strlen((char *)temp->content))
+			x = ft_strlen((char *)temp->content);
 		temp = temp->next;
 	}
 	return (x);

@@ -6,16 +6,16 @@
 /*   By: csapt <csapt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/22 20:16:07 by csapt             #+#    #+#             */
-/*   Updated: 2020/05/22 20:16:08 by csapt            ###   ########lyon.fr   */
+/*   Updated: 2021/04/16 09:23:57 by csapt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_check_sep(char *str, char c)
+static int	ft_check_sep(char *str, char c)
 {
-	int x;
-	int i;
+	int	x;
+	int	i;
 
 	i = 0;
 	x = 0;
@@ -30,10 +30,10 @@ static int		ft_check_sep(char *str, char c)
 	return (1);
 }
 
-static int		ft_split_word(char *str, char c)
+static int	ft_split_word(char *str, char c)
 {
-	int x;
-	int i;
+	int	x;
+	int	i;
 
 	x = 0;
 	i = 0;
@@ -56,7 +56,7 @@ static int		ft_split_word(char *str, char c)
 	return (i);
 }
 
-static char		*ft_split_malloc(char *s, char c, int *x)
+static char	*ft_split_malloc(char *s, char c, int *x)
 {
 	int		j;
 	int		u;
@@ -66,7 +66,8 @@ static char		*ft_split_malloc(char *s, char c, int *x)
 	u = *x;
 	while (s[*x] != c && s[*x] != '\0')
 		(*x)++;
-	if (!(str = (char *)ft_calloc((*x - u) + 1, sizeof(*str))))
+	str = (char *)ft_calloc((*x - u) + 1, sizeof(*str));
+	if (str == NULL)
 		return (0);
 	while (u < *x)
 	{
@@ -78,7 +79,7 @@ static char		*ft_split_malloc(char *s, char c, int *x)
 	return (str);
 }
 
-char			**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	int		j;
 	char	**str;
@@ -88,7 +89,8 @@ char			**ft_split(char const *s, char c)
 	x = 0;
 	if (!(s))
 		return (0);
-	if (!(str = ft_calloc(ft_split_word((char *)s, c) + 1, sizeof(*str))))
+	str = ft_calloc(ft_split_word((char *)s, c) + 1, sizeof(*str));
+	if (str == NULL)
 		return (0);
 	while (s[x] != '\0')
 	{
@@ -96,7 +98,8 @@ char			**ft_split(char const *s, char c)
 			x++;
 		if (s[x] == '\0')
 			return (str);
-		if (!(str[j] = ft_split_malloc((char *)s, c, &x)))
+		str[j] = ft_split_malloc((char *)s, c, &x);
+		if (str[j] == NULL)
 			return (ft_free_tab(str));
 		j++;
 	}

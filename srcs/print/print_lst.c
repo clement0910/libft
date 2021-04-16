@@ -14,7 +14,7 @@
 
 void	print_lst(t_list **maplist)
 {
-	t_list *temp;
+	t_list	*temp;
 
 	temp = *maplist;
 	while (temp)

@@ -14,7 +14,7 @@
 
 void	print_tab(char **tab)
 {
-	int x;
+	int	x;
 
 	x = 0;
 	if (!tab)

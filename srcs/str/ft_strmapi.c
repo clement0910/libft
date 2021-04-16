@@ -6,7 +6,7 @@
 /*   By: csapt <csapt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/22 20:17:17 by csapt             #+#    #+#             */
-/*   Updated: 2020/05/22 20:17:19 by csapt            ###   ########lyon.fr   */
+/*   Updated: 2021/04/16 09:34:09 by csapt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	x = 0;
 	if (!s)
 		return (0);
-	if (!(str = malloc((ft_strlen(s) + 1) * sizeof(char))))
+	str = malloc((ft_strlen(s) + 1) * sizeof(char));
+	if (str == NULL)
 		return (0);
 	while (s[x] != '\0')
 	{

@@ -98,6 +98,7 @@ SRC_PRINT :=	ft_putchar_fd.c							\
 SRCPATH_PRINT := $(addprefix $(SRCDIR_PRINT), $(SRC_PRINT))
 
 SRC_STR :=	ft_chrcmp.c									\
+			ft_freestr.c								\
 			ft_isalnum.c								\
 			ft_isalpha.c								\
 			ft_isascii.c								\
@@ -142,58 +143,16 @@ LFT_SRCS :=	$(SRCPATH_CONVERSION)						\
 			$(SRCPATH_STR)								\
 			$(SRCPATH_TIME)								
 
-#PRITNF
-
-PRINTF_DIR := ft_printf/
-
-PRINTF_SRCS_DIR	:= $(LFT_SRCS_DIR)$(PRINTF_DIR)
-
-PRINTF_INCLUDES_DIR	:= $(LFT_INCLUDES_DIR)$(PRINTF_DIR)
-
-PRINTF_OBJSDIR	:= $(LFT_OBJSDIR)$(PRINTF_DIR)
-
-PRINTF_OBJSDIRS	:= $(PRINTF_OBJSDIR) 					\
-
-PRINTF_INCLUDES =	libftprintf.h						\
-
-PRINTF_INCLUDES := $(addprefix $(PRINTF_INCLUDES_DIR),$(PRINTF_INCLUDES))
-
-PRINTF_ALL_SRCS	:= 	ft_printf.c							\
-					ft_printf_aux.c						\
-					ft_printf_aux_bonus.c				\
-					ft_printf_conversion.c				\
-					ft_printf_conversion2.c				\
-					ft_printf_conversion_bonus.c		\
-					ft_printf_conversiond_bonus.c		\
-					ft_printf_conversionu_bonus.c		\
-					ft_printf_conversionx_bonus.c		\
-					ft_printf_conversionxmaj_bonus.c	\
-					ft_printf_convertutils.c			\
-					ft_printf_convertutils_bonus.c		\
-					ft_printf_flags.c					\
-					ft_printf_flags_bonus.c				\
-
-PRINTF_ALL_SRCS := 	$(addprefix $(PRINTF_DIR), $(PRINTF_ALL_SRCS))
-
-PRINTF_SRCS := $(PRINTF_ALL_SRCS)
-
 
 #OBJS/INCLUDES
 
 LFT_OBJS := $(LFT_SRCS:.c=.o)
 
-PRINTF_OBJS := $(PRINTF_SRCS:.c=.o)
+OBJSDIRS := $(LFT_OBJSDIRS)
 
+OBJS := $(addprefix $(LFT_OBJSDIR), $(LFT_OBJS))
 
-OBJSDIRS := $(LFT_OBJSDIRS) 						\
-			$(PRINTF_OBJSDIRS)
-
-OBJS := $(addprefix $(LFT_OBJSDIR), $(PRINTF_OBJS)) \
-		$(addprefix $(LFT_OBJSDIR), $(LFT_OBJS))
-
-
-INCLUDES := $(LFT_INCLUDES) 						\
-			$(PRINTF_INCLUDES) 						\
+INCLUDES := $(LFT_INCLUDES)
 
 #GLOBAL VARIABLES
 
@@ -223,10 +182,6 @@ $(NAME)	: $(OBJS)
 printdebug:
 		@$(PRINT) "$(PRINTF_OBJSDIR) |$(PRINTF_OBJS)\n"
 		@$(PRINT) "$(LFT_OBJSDIR) | $(LFT_OBJS)\n"
-
-$(PRINTF_OBJSDIR)%.o: $(PRINTF_SRCS_DIR)%.c $(INCLUDES)
-		$(CC) $(CFLAGS) -c -I $(LFT_INCLUDES_DIR) -I $(PRINTF_INCLUDES_DIR) -o $@ $<
-		@$(PRINT) "$(HIDE_CURSOR)\033[1;34m%-20s\033[1;33m%-25s\033[0;32m$(PROGRESS)\033[0m$(ERASE_ENDLINE)$(CURSOR_LEFT)" "Compilation..." "$(NAME)"
 
 $(LFT_OBJSDIR)%.o: $(LFT_SRCS_DIR)%.c $(LFT_INCLUDES)
 		$(CC) $(CFLAGS) -c -I $(LFT_INCLUDES_DIR) -o $@ $<

@@ -6,7 +6,7 @@
 /*   By: csapt <csapt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/22 20:11:01 by csapt             #+#    #+#             */
-/*   Updated: 2020/05/22 20:20:03 by csapt            ###   ########lyon.fr   */
+/*   Updated: 2021/04/16 08:45:57 by csapt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *str)
 {
-	int x;
-	int resultat;
-	int neg;
+	int		x;
+	int		resultat;
+	int		neg;
 
 	resultat = 0;
 	x = 0;

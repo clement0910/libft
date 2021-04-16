@@ -14,7 +14,7 @@
 
 int	ft_tablen(char **tab)
 {
-	int x;
+	int	x;
 
 	x = 0;
 	while (tab[x] != NULL)

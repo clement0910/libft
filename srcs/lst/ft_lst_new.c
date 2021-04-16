@@ -6,7 +6,7 @@
 /*   By: csapt <csapt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/22 20:14:36 by csapt             #+#    #+#             */
-/*   Updated: 2021/01/05 20:47:52 by csapt            ###   ########lyon.fr   */
+/*   Updated: 2021/04/16 09:00:07 by csapt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 t_list	*ft_lst_new(void *content)
 {
-	t_list		*ptr;
+	t_list	*ptr;
 
-	if (!(ptr = malloc(sizeof(t_list))))
+	ptr = malloc(sizeof(t_list));
+	if (ptr == NULL)
 		return (0);
 	ptr->content = content;
 	ptr->next = NULL;

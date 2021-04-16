@@ -14,7 +14,7 @@
 
 char	**ft_free_tab(char **str)
 {
-	int x;
+	int	x;
 
 	x = 0;
 	if (!str)

@@ -14,7 +14,7 @@
 
 void	ft_lst_addback(t_list **alst, t_list *new)
 {
-	t_list *temp;
+	t_list	*temp;
 
 	if (!alst || !new)
 		return ;

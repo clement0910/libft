@@ -14,7 +14,7 @@
 
 int	ft_chrcmp(char *str, char c)
 {
-	int x;
+	int	x;
 
 	x = 0;
 	while (str[x] != '\0')

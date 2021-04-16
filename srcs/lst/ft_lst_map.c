@@ -6,7 +6,7 @@
 /*   By: csapt <csapt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/22 20:14:28 by csapt             #+#    #+#             */
-/*   Updated: 2021/01/05 20:48:29 by csapt            ###   ########lyon.fr   */
+/*   Updated: 2021/04/16 09:11:29 by csapt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,15 @@ t_list	*ft_lst_map(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 	if (lst && f)
 	{
-		if (!(current = ft_lst_new((*f)(lst->content))))
+		current = ft_lst_new((*f)(lst->content));
+		if (current == NULL)
 			return (NULL);
 		first = current;
 		lst = lst->next;
 		while (lst)
 		{
-			if (!(current->next = ft_lst_new((*f)(lst->content))))
+			current->next = ft_lst_new((*f)(lst->content));
+			if (!(current->next == NULL))
 			{
 				ft_lst_clear(&first, (*del));
 				return (NULL);

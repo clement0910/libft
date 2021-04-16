@@ -14,7 +14,7 @@
 
 char	*ft_strcpy(char *src, char *dst)
 {
-	int x;
+	int	x;
 
 	x = 0;
 	if (!dst || !src)
