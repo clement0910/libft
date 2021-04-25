@@ -179,10 +179,6 @@ $(NAME)	: $(OBJS)
 		@$(PRINT) "$(ERASE_FULLLINE)\033[1;34m%-20s\033[1;33m%-25s\033[0;32m[OK]\033[0m\n$(SHOW_CURSOR)" "Compiled lib" "$(NAME)"
 		@$(RAN) $(NAME) $(OBJS)
 
-printdebug:
-		@$(PRINT) "$(PRINTF_OBJSDIR) |$(PRINTF_OBJS)\n"
-		@$(PRINT) "$(LFT_OBJSDIR) | $(LFT_OBJS)\n"
-
 $(LFT_OBJSDIR)%.o: $(LFT_SRCS_DIR)%.c $(LFT_INCLUDES)
 		$(CC) $(CFLAGS) -c -I $(LFT_INCLUDES_DIR) -o $@ $<
 		@$(PRINT) "$(HIDE_CURSOR)\033[1;34m%-20s\033[1;33m%-25s\033[0;32m$(PROGRESS)\033[0m$(ERASE_ENDLINE)$(CURSOR_LEFT)" "Compilation..." "$(NAME)"
