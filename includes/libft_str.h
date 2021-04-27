@@ -37,6 +37,7 @@ int				ft_tolower(int c);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strfreejoin(char *s1, char *s2);
+char			*ft_str2freejoin(char *s1, char *s2);
 char			*ft_freestr(char *str);
 int				ft_chrcmp(char *str, char c);
 char			*ft_strtrim(char const *s1, char const *set);

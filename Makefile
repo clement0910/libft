@@ -23,9 +23,12 @@ LFT_INCLUDES := libft.h									\
 				libft_print.h							\
 				libft_str.h								\
 				libft_time.h							\
-				libft_vector.h			
+				libft_vector.h							\
+				argv_join.h
 
 LFT_INCLUDES := $(addprefix $(LFT_INCLUDES_DIR),$(LFT_INCLUDES))
+
+SRCDIR_ARGVJOIN := argv_join/
 
 SRCDIR_CONVERSION := conversion/
 
@@ -50,7 +53,12 @@ LFT_OBJSDIRS :=	$(LFT_OBJSDIR)							\
 				$(LFT_OBJSDIR)$(SRCDIR_MEM)				\
 				$(LFT_OBJSDIR)$(SRCDIR_PRINT)			\
 				$(LFT_OBJSDIR)$(SRCDIR_STR)				\
-				$(LFT_OBJSDIR)$(SRCDIR_TIME)			
+				$(LFT_OBJSDIR)$(SRCDIR_TIME)			\
+				$(LFT_OBJSDIR)$(SRCDIR_ARGVJOIN)
+
+SRC_ARGVJOIN		:= argv_join.c
+
+SRCPATH_ARGVJOIN := $(addprefix $(SRCDIR_ARGVJOIN), $(SRC_ARGVJOIN))
 
 SRC_CONVERSION :=	ft_atoi.c							\
 					ft_atoi_index.c						\
@@ -111,6 +119,7 @@ SRC_STR :=	ft_chrcmp.c									\
 			ft_strdupto.c								\
 			ft_strjoin.c								\
 			ft_strfreejoin.c							\
+			ft_str2freejoin.c							\
 			ft_strlcat.c								\
 			ft_strcpy.c									\
 			ft_strlcpy.c								\
@@ -141,7 +150,8 @@ LFT_SRCS :=	$(SRCPATH_CONVERSION)						\
 			$(SRCPATH_MEM)								\
 			$(SRCPATH_PRINT)							\
 			$(SRCPATH_STR)								\
-			$(SRCPATH_TIME)								
+			$(SRCPATH_TIME)								\
+			$(SRCPATH_ARGVJOIN)
 
 
 #OBJS/INCLUDES

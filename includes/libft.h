@@ -6,7 +6,7 @@
 /*   By: csapt <csapt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/22 20:18:44 by csapt             #+#    #+#             */
-/*   Updated: 2021/04/25 19:37:57 by csapt            ###   ########lyon.fr   */
+/*   Updated: 2021/04/26 18:09:22 by csapt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@
 # include "libft_str.h"
 # include "libft_time.h"
 # include "libft_vector.h"
+# include "argv_join.h"
 
 #endif
