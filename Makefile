@@ -126,6 +126,7 @@ SRC_STR :=	ft_chrcmp.c									\
 			ft_strlen.c									\
 			ft_strlento.c								\
 			ft_strmapi.c								\
+			ft_str_replace.c							\
 			ft_strcmp.c									\
 			ft_strncmp.c								\
 			ft_strnstr.c								\
