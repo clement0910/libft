@@ -121,7 +121,7 @@ int	get_next_line(int fd, char **line)
 		*line = ft_strjoin_gnl(*line, buf);
 	}
 	if (error == 0)
-		buf = ft_freestr(buf);
+		ft_freestr(buf);
 	else
 		error = 1;
 	return (error);
