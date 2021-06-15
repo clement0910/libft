@@ -6,7 +6,7 @@
 /*   By: csapt <csapt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 22:42:00 by csapt             #+#    #+#             */
-/*   Updated: 2021/04/16 11:27:59 by csapt            ###   ########lyon.fr   */
+/*   Updated: 2021/06/15 12:12:05 by csapt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void				ft_lst_delone(t_list *lst, void (*del)(void *));
 void				ft_lst_clear(t_list **lst, void (*del)(void *));
 void				ft_lst_iter(t_list *lst, void (*f)(void *));
 t_list				*ft_lst_map(t_list *lst, void *(*f)(void *),
-					  			void (*del)(void *));
+						void (*del)(void *));
 int					ft_lst_maxstrlen(t_list **maplist);
 
 #endif

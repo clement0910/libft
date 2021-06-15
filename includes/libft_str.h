@@ -6,7 +6,7 @@
 /*   By: csapt <csapt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 22:54:01 by csapt             #+#    #+#             */
-/*   Updated: 2021/06/10 17:28:30 by csapt            ###   ########lyon.fr   */
+/*   Updated: 2021/06/15 11:57:18 by csapt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ char			**ft_strtabdup(char **src);
 size_t			ft_strlen(const char *str);
 size_t			ft_strlento(char *str, char c);
 int				ft_tablen(char **tab);
+char			**ft_tab_addback(char **tab, char *src);
 int				ft_strcmp(char *s1, char *s2);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 char			*ft_strnstr(const char *s1, const char *s2, size_t len);

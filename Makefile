@@ -133,6 +133,7 @@ SRC_STR :=	ft_chrcmp.c									\
 			ft_strrchr.c								\
 			ft_strrev.c									\
 			ft_strtabdup.c								\
+			ft_tab_addback.c                            \
 			ft_strtrim.c								\
 			ft_substr.c									\
 			ft_tablen.c									\

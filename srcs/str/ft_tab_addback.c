@@ -1,40 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtabdup.c                                     :+:      :+:    :+:   */
+/*   ft_tab_addback.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: csapt <csapt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/09 19:19:46 by csapt             #+#    #+#             */
-/*   Updated: 2021/04/16 09:30:56 by csapt            ###   ########lyon.fr   */
+/*   Created: 2021/06/15 11:38:47 by csapt             #+#    #+#             */
+/*   Updated: 2021/06/15 12:01:57 by csapt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_strtabdup(char **src)
+char	**ft_tab_addback(char **tab, char *src)
 {
-	int		x;
-	int		srclen;
-	char	**tab;
+	int		i;
+	char	**ret;
 
-	x = 0;
-	srclen = ft_tablen(src);
-	if (srclen == 0)
+	i = 0;
+	ret = malloc((ft_tablen(tab) + 2) * sizeof(char *));
+	if (!ret)
 		return (NULL);
-	tab = malloc((srclen + 1) * sizeof(char *));
-	if (tab == NULL)
-		return (NULL);
-	while (x < srclen)
+	while (tab[i] != NULL)
 	{
-		tab[x] = ft_strdup(src[x]);
-		if (tab[x] == NULL)
-		{
-			ft_free_tab(tab);
-			return (NULL);
-		}
-		x++;
+		ret[i] = ft_strdup(tab[i]);
+		if (ret[i] == NULL)
+			return (ft_free_tab(ret));
+		i++;
 	}
-	tab[x] = NULL;
-	return (tab);
+	ret[i] = ft_strdup(src);
+	if (ret[i] == NULL)
+		return (ft_free_tab(ret));
+	i++;
+	ret[i] = NULL;
+	return (ret);
 }
